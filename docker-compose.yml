@@ -1,0 +1,23 @@
+version: "2"
+services:
+  seek-job-ads-checkout-app:
+    container_name: seek-job-ads-checkout-app
+    command: bash -c "npm install && adonis serve --dev"
+    build: .
+    volumes:
+      - .:/seek-job-ads-checkout-app
+    depends_on:
+      - seek-job-ads-checkout-db
+    links:
+      - seek-job-ads-checkout-db
+    ports:
+      - "3333:3333"
+  seek-job-ads-checkout-db:
+    image: postgres
+    container_name: seek-job-ads-checkout-db
+    environment:
+      POSTGRES_PASSWORD: seek
+      POSTGRES_USER: seek
+      POSTGRES_DB: seek-jobs
+    ports:
+      - "5432:5432"
