@@ -14,30 +14,18 @@
     </div>
   </div>
 
-  <div class="form-group row justify-content-center">
-    <label for="classic" class="col-sm-2 col-form-label">Classic Ads</label>
-    <div class="col-sm-6">
-      <input class="form-control" type="text" name="classic" id="classic" value="0" pattern="^[0-9]+$" required>
+  @each(product in products)
+    <div class="form-group row justify-content-center">
+      <label for="{{ product.id }}" class="col-sm-2 col-form-label">{{ product.name }}</label>
+      <div class="col-sm-6">
+        <input class="form-control" type="text" name="{{ product.id }}" id="{{ product.id }}" value="0" pattern="^[0-9]+$" required>
+      </div>
     </div>
-  </div>
-
-  <div class="form-group row justify-content-center">
-    <label for="standout" class="col-sm-2 col-form-label">Standout Ads</label>
-    <div class="col-sm-6">
-      <input class="form-control" type="text" name="standout" id="standout" value="0" pattern="^[0-9]+$" required>
-    </div>
-  </div>
-
-  <div class="form-group row justify-content-center">
-    <label for="premium" class="col-sm-2 col-form-label">Premium Ads</label>
-    <div class="col-sm-6">
-      <input class="form-control" type="text" name="premium" id="premium" value="0" pattern="^[0-9]+$" required>
-    </div>
-  </div>
+  @endeach
 
   <div class="form-group row justify-content-center mt-5">
     <div class="col-sm-4">
-      <button class="form-control btn btn-primary btn-lg" type="reset">
+      <button class="form-control btn btn-danger btn-lg" type="reset">
         <i class="fas fa-undo"></i>
         Reset
       </button>
