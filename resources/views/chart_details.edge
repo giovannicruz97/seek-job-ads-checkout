@@ -1,3 +1,41 @@
 @layout('base')
 @section('content')
+<div class="row justify-content-center">
+  <div class="col">
+      <table class="table table-hover table-bordered">
+        <thead class="thead-light">
+          <tr>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          @each(product in chartDetails.chart)
+            <tr>
+              <td>{{ product.name }}</td>
+              <td>{{ product.quantity }}</td>
+              <td>{{ product.price }}</td>
+            </tr>
+          @endeach
+          <tr class="table-secondary font-weight-bold">
+              <td colspan="2">Customer</td>
+              <td>{{ chartDetails.customer }}</td>
+            </tr>
+          <tr class="table-secondary font-weight-bold">
+            <td colspan="2">Total</td>
+            <td>{{ chartDetails.total }}</td>
+          </tr>
+        </tbody>
+      </table>
+  </div>
+</div>
+<div class="row justify-content-center mt-5">
+  <div class="col-sm-4">
+    <a class="btn btn-lg btn-primary btn-block" href="{{ route('loadCheckout') }}" role="button">
+      <i class="fas fa-shopping-cart"></i>
+      Checkout
+    </a>
+  </div>
+</div>
 @endsection
