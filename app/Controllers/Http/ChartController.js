@@ -1,11 +1,18 @@
-"use strict";
-
 class ChartController {
   async index({ request, response, view }) {
-    const formData = request.post();
-    console.log(formData);
-    const title = "Chart Details";
-    return view.render("chart_details", { title });
+    const chartService = use('App/Services/ChartService');
+    const productService = use('App/Services/ProductService');
+
+    let companyId = request.only(['company']).company;
+    let products = request.except(['_csrf', 'company']);
+
+    products = productService.extractProduct(products);
+    const chartDetails = await chartService.calculateChart(companyId, products);
+
+    return view.render('chart_details', {
+      title: 'Chart Details',
+      chartDetails
+    });
   }
 }
 
