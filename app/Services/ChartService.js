@@ -34,7 +34,7 @@ class ChartService {
         let addedProduct = {
           id: product.id,
           name: foundProduct.name,
-          quantity: product.quantity,
+          quantity: parseInt(product.quantity),
           price: product.quantity * foundProduct.price
         };
         total += addedProduct.price;
@@ -57,20 +57,32 @@ class ChartService {
     for (let product of products) {
       if (product.quantity > 0) {
         let foundProduct = await Product.find(product.id);
-        let discount = (await foundProduct
+        let discount = await foundProduct
           .discounts()
           .where('customer_id', customer.id)
-          .fetch()).toJSON();
+          .first();
+
+        let deal = await foundProduct
+          .deals()
+          .where('customer_id', customer.id)
+          .first();
 
         let addedProduct = {
           id: product.id,
           name: foundProduct.name,
-          quantity: product.quantity,
+          quantity: parseInt(product.quantity),
           price: product.quantity * foundProduct.price
         };
 
-        if (discount[0] && product.quantity >= discount[0].minimum_products) {
-          addedProduct.price = product.quantity * discount[0].price_drop;
+        if (discount && product.quantity >= discount.minimum_products) {
+          addedProduct.price = product.quantity * discount.price_drop;
+        }
+
+        if (deal && product.quantity == deal.for) {
+          let withdrawal = deal.gets - deal.for;
+          for (let i = 0; i < withdrawal; i++) {
+            addedProduct.quantity += i + 1;
+          }
         }
 
         total += addedProduct.price;
