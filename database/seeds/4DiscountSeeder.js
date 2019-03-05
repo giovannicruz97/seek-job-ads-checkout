@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 /*
 |--------------------------------------------------------------------------
@@ -10,31 +10,31 @@
 |
 */
 
-const Database = use("Database");
+const Database = use('Database');
 
 class DiscountSeeder {
   async run() {
-    const insertedDiscounts = await Database.from("discounts").insert([
+    const insertedDiscounts = await Database.from('discounts').insert([
       {
-        product_id: "standout",
+        product_id: 'standout',
         customer_id: 2,
         minimum_products: 0,
         price_drop: 299.99
       },
       {
-        product_id: "premium",
+        product_id: 'premium',
         customer_id: 3,
         minimum_products: 4,
         price_drop: 379.99
       },
       {
-        product_id: "standout",
+        product_id: 'standout',
         customer_id: 4,
         minimum_products: 0,
         price_drop: 309.99
       },
       {
-        product_id: "premium",
+        product_id: 'premium',
         customer_id: 4,
         minimum_products: 3,
         price_drop: 389.99

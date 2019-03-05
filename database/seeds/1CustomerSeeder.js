@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 /*
 |--------------------------------------------------------------------------
@@ -10,15 +10,15 @@
 |
 */
 
-const Database = use("Database");
+const Database = use('Database');
 
 class CustomerSeeder {
   async run() {
-    const insertedCustomers = await Database.from("customers").insert([
-      { name: "UNILEVER" },
-      { name: "APPLE" },
-      { name: "NIKE" },
-      { name: "FORD" }
+    const insertedCustomers = await Database.from('customers').insert([
+      { name: 'UNILEVER' },
+      { name: 'APPLE' },
+      { name: 'NIKE' },
+      { name: 'FORD' }
     ]);
     console.log(insertedCustomers);
   }
