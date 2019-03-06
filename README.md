@@ -63,7 +63,7 @@ Catho/SEEK Job Ads Checkout was built using Adonis.JS (Node.JS) and PostgreSQL w
 
 ```
 {
-  id: int,
+  (PK) id: int,
   (FK -> products.id) product_id: string,
   (FK -> customers.id) customer_id: int,
   gets: int,
