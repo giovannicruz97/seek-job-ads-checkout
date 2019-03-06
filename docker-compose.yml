@@ -22,3 +22,12 @@ services:
       POSTGRES_DB: seek-jobs
     ports:
       - "5432:5432"
+  seek-job-ads-checkout-db-test:
+    image: postgres
+    container_name: seek-job-ads-checkout-db-test
+    environment:
+      POSTGRES_PASSWORD: seek
+      POSTGRES_USER: seek
+      POSTGRES_DB: seek-jobs
+    ports:
+      - "5433:5432"
