@@ -1,6 +1,8 @@
 # :clipboard: Catho/SEEK Job Ads Checkout
 
-![](https://upload.wikimedia.org/wikipedia/commons/3/35/Logo-catho.png)
+<p align="center">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/3/35/Logo-catho.png">
+</p>
 
 Catho/SEEK Job Ads Checkout was built using Adonis.JS (Node.JS) and PostgreSQL with Docker.
 
