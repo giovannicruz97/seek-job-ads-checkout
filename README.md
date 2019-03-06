@@ -2,7 +2,7 @@
 
 ![](https://upload.wikimedia.org/wikipedia/commons/3/35/Logo-catho.png)
 
-Catho/SEEK Job Ads Checkout was builting using Adonis.JS (Node.JS) and PostgreSQL with a Docker infrastructure.
+Catho/SEEK Job Ads Checkout was built using Adonis.JS (Node.JS) and PostgreSQL with Docker.
 
 ## Requisitos
 
