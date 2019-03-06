@@ -1,6 +1,6 @@
 # :clipboard: Catho/SEEK Job Ads Checkout
 
-![](https://media.giphy.com/media/1d7E5ogkVOdY4yiMPY/giphy.gif)
+![](https://upload.wikimedia.org/wikipedia/commons/3/35/Logo-catho.png)
 
 Catho/SEEK Job Ads Checkout was builting using Adonis.JS (Node.JS) and PostgreSQL with a Docker infrastructure.
 
@@ -11,7 +11,7 @@ Catho/SEEK Job Ads Checkout was builting using Adonis.JS (Node.JS) and PostgreSQ
 
 ## How to run it ?
 
-1. `git clone https://github.com/giovannicruz97/seek-job-ads-checkout`
+1. `git clone https://github.com/giovannicruz97/seek-job-ads-checkout.git`
 2. `cd /seek-job-ads-checkout`
 3. Create a `.env` file inside project's root, following `.env.example` as example. .
 4. `docker-compose up -d`
