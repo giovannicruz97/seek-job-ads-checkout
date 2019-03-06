@@ -32,7 +32,7 @@ Catho/SEEK Job Ads Checkout was built using Adonis.JS (Node.JS) and PostgreSQL w
 
 ```
 {
-  id: int,
+  (PK) id: int,
   name: string,
 }
 ```
@@ -41,7 +41,7 @@ Catho/SEEK Job Ads Checkout was built using Adonis.JS (Node.JS) and PostgreSQL w
 
 ```
 {
-  id: string,
+  (PK) id: string,
   name: string,
   price: decimal(10,2)
 }
@@ -51,9 +51,9 @@ Catho/SEEK Job Ads Checkout was built using Adonis.JS (Node.JS) and PostgreSQL w
 
 ```
 {
-  id: int,
-  product_id: string,
-  customer_id: int,
+  (PK) id: int,
+  (FK -> products.id) product_id: string,
+  (FK -> customers.id) customer_id: int,
   minimum_products: int,
   price_drop: decimal(10,2)
 }
@@ -64,8 +64,8 @@ Catho/SEEK Job Ads Checkout was built using Adonis.JS (Node.JS) and PostgreSQL w
 ```
 {
   id: int,
-  product_id: string,
-  customer_id: int,
+  (FK -> products.id) product_id: string,
+  (FK -> customers.id) customer_id: int,
   gets: int,
   for: int
 }
