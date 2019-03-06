@@ -6,7 +6,7 @@
 
 Catho/SEEK Job Ads Checkout was built using Adonis.JS (Node.JS), Bootstrap 4 and PostgreSQL with Docker.
 
-## Requisitos
+## Requirements
 
 - [Docker](https://docs.docker.com/install/)
 - [Docker Compose](https://docs.docker.com/compose/install/)
