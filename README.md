@@ -16,7 +16,7 @@ Catho/SEEK Job Ads Checkout was built using Adonis.JS (Node.JS), Bootstrap 4 and
 1. `git clone https://github.com/giovannicruz97/seek-job-ads-checkout.git`
 2. `cd /seek-job-ads-checkout`
 3. Create a `.env` file inside project's root, following `.env.example` as example. .
-4. `docker-compose up -d`
+4. `docker-compose up -d` (background) or `docker-compose up` (foreground)
 5. Create and populate database with initial data: `docker exec seek-job-ads-checkout-app adonis migration:refresh --seed`
 6. In your browser, go to: `http://localhost:3333` or `http://0.0.0.0:3333`
 7. To access container's bash, execute: `docker exec -it seek-job-ads-checkout-app bash`
